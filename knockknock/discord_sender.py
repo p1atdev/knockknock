@@ -86,9 +86,9 @@ def discord_sender(webhook_url: str):
                             'Crash date: %s' % end_time.strftime(DATE_FORMAT),
                             'Crashed training duration: %s\n\n' % str(elapsed_time),
                             "Here's the error:",
-                            '%s\n\n' % ex,
+                            '```\n%s\n```\n' % ex,
                             "Traceback:",
-                            '%s' % traceback.format_exc()]
+                            '```\n%s\n```' % traceback.format_exc()]
                 text = '\n'.join(contents)
                 send_message(text=text)
                 raise ex
